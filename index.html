@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Central Hub – Your professional portal to all essential tools and platforms." />
+  <meta name="theme-color" content="#0a0e17" />
+  <title>⚡ Central Hub – Tech Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════
+       NAVBAR
+  ════════════════════════════════════════ -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
+    <!-- Logo -->
+    <a class="nav-logo" href="#" aria-label="Central Hub home">
+      <div class="logo-icon">⚡</div>
+      <span class="logo-text">Central <span>Hub</span></span>
+    </a>
+
+    <!-- Search -->
+    <div class="nav-search" role="search">
+      <span class="search-icon" aria-hidden="true">
+        <i data-lucide="search" style="width:16px;height:16px;"></i>
+      </span>
+      <input
+        id="searchInput"
+        class="search-input"
+        type="search"
+        placeholder="Search tools, categories…"
+        autocomplete="off"
+        aria-label="Search portal cards"
+      />
+      <button class="search-clear" id="searchClear" aria-label="Clear search">
+        <i data-lucide="x" style="width:14px;height:14px;"></i>
+      </button>
+    </div>
+
+    <!-- Desktop filter pills -->
+    <div class="nav-filters" id="navFilters" role="tablist" aria-label="Category filters">
+      <button class="filter-pill active" data-category="all" role="tab" aria-selected="true">All</button>
+      <button class="filter-pill" data-category="Design" role="tab" aria-selected="false">Design</button>
+      <button class="filter-pill" data-category="Dev Tools" role="tab" aria-selected="false">Dev Tools</button>
+      <button class="filter-pill" data-category="Productivity" role="tab" aria-selected="false">Productivity</button>
+      <button class="filter-pill" data-category="Finance" role="tab" aria-selected="false">Finance</button>
+      <button class="filter-pill" data-category="Docs" role="tab" aria-selected="false">Docs</button>
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobilePanel">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile overlay + panel -->
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+  <div class="mobile-panel" id="mobilePanel" role="dialog" aria-label="Category filter menu" aria-modal="true">
+    <p class="panel-title">Filter by Category</p>
+    <button class="mobile-filter-pill active" data-category="all">⊞ All Tools</button>
+    <button class="mobile-filter-pill" data-category="Design">🎨 Design</button>
+    <button class="mobile-filter-pill" data-category="Dev Tools">⚙️ Dev Tools</button>
+    <button class="mobile-filter-pill" data-category="Productivity">📋 Productivity</button>
+    <button class="mobile-filter-pill" data-category="Finance">📊 Finance</button>
+    <button class="mobile-filter-pill" data-category="Docs">📄 Docs</button>
+  </div>
+
+  <!-- ═══════════════════════════════════════
+       MAIN
+  ════════════════════════════════════════ -->
+  <main class="main-content" role="main">
+
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero-eyebrow" aria-label="Status indicator">
+        <span class="dot" aria-hidden="true"></span>
+        All Systems Operational
+      </div>
+      <h1 id="heroTitle">
+        Your <span class="gradient-text">Central Hub</span><br />for Every Tool
+      </h1>
+      <p>One place to access all your essential platforms, dashboards, and workspaces. Stay in flow.</p>
+      <div class="hero-stats" aria-label="Dashboard statistics">
+        <div class="stat-item">
+          <span class="stat-number" id="statTotal">12</span>
+          <span class="stat-label">Platforms</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="statOnline">10</span>
+          <span class="stat-label">Online</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="stat-item">
+          <span class="stat-number">5</span>
+          <span class="stat-label">Categories</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cards Section -->
+    <section aria-labelledby="gridTitle">
+      <div class="section-header">
+        <h2 class="section-title" id="gridTitle">
+          <span class="gradient-text">All Platforms</span>
+        </h2>
+        <span class="results-count" id="resultsCount" aria-live="polite">Showing 12 of 12</span>
+      </div>
+
+      <!-- Bento Grid -->
+      <div class="bento-grid" id="bentoGrid" role="list" aria-label="Platform cards">
+
+        <!-- ─── 1. Figma (LARGE) ───────────────── -->
+        <a
+          class="portal-card card-large"
+          href="https://figma.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Figma"
+          data-category="Design"
+          data-desc="Design Tools"
+          role="listitem"
+          aria-label="Figma – Design Tools. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="palette"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Figma</p>
+            <p class="card-desc">Collaborative interface design tool for building beautiful products and design systems with your team.</p>
+            <div class="card-extra">
+              <div class="card-extra-stat">
+                <span class="es-num">2.4M</span>
+                <span class="es-label">Users</span>
+              </div>
+              <div class="card-extra-divider"></div>
+              <div class="card-extra-stat">
+                <span class="es-num">∞</span>
+                <span class="es-label">Components</span>
+              </div>
+              <div class="card-extra-divider"></div>
+              <div class="card-extra-stat">
+                <span class="es-num">Real-time</span>
+                <span class="es-label">Collab</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Design</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 2. Notion ─────────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://notion.so"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Notion"
+          data-category="Productivity"
+          data-desc="Project Management"
+          role="listitem"
+          aria-label="Notion – Project Management. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="book-open"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Notion</p>
+            <p class="card-desc">All-in-one workspace for notes, tasks, wikis, and project management.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Productivity</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 3. GitHub ─────────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="GitHub"
+          data-category="Dev Tools"
+          data-desc="Code Repository"
+          role="listitem"
+          aria-label="GitHub – Code Repository. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="github"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">GitHub</p>
+            <p class="card-desc">World's leading platform for version control and collaborative software development.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Dev Tools</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 4. Vercel (LARGE) ─────────────── -->
+        <a
+          class="portal-card card-large"
+          href="https://vercel.com/dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Vercel Dashboard"
+          data-category="Dev Tools"
+          data-desc="Deployment Platform"
+          role="listitem"
+          aria-label="Vercel Dashboard – Deployment Platform. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="zap"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Vercel Dashboard</p>
+            <p class="card-desc">Deploy your front-end projects with zero config. Global edge network for blazing fast deployments and previews.</p>
+            <div class="card-extra">
+              <div class="card-extra-stat">
+                <span class="es-num">&lt;1s</span>
+                <span class="es-label">Cold Start</span>
+              </div>
+              <div class="card-extra-divider"></div>
+              <div class="card-extra-stat">
+                <span class="es-num">100+</span>
+                <span class="es-label">Edge Nodes</span>
+              </div>
+              <div class="card-extra-divider"></div>
+              <div class="card-extra-stat">
+                <span class="es-num">99.9%</span>
+                <span class="es-label">Uptime</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Dev Tools</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 5. Financial Dashboard ─────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://app.financedash.io"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Financial Dashboard"
+          data-category="Finance"
+          data-desc="Dashboard Keuangan"
+          role="listitem"
+          aria-label="Financial Dashboard – Dashboard Keuangan. Status: New"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="trending-up"></i>
+            </div>
+            <span class="status-badge new" aria-label="Status: New">
+              <span class="badge-dot"></span>New
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Financial Dashboard</p>
+            <p class="card-desc">Comprehensive financial metrics, KPIs, and real-time budget tracking.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Finance</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 6. Slack ───────────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://slack.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Slack"
+          data-category="Productivity"
+          data-desc="Team Communication"
+          role="listitem"
+          aria-label="Slack – Team Communication. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="message-square"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Slack</p>
+            <p class="card-desc">Real-time messaging, file sharing, and team collaboration in one place.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Productivity</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 7. Analytics Dashboard (LARGE) ── -->
+        <a
+          class="portal-card card-large"
+          href="https://analytics.company.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Analytics Dashboard"
+          data-category="Finance"
+          data-desc="Data Analytics"
+          role="listitem"
+          aria-label="Analytics Dashboard – Data Analytics. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="bar-chart-2"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Analytics Dashboard</p>
+            <p class="card-desc">Deep dive into your data with interactive charts, funnel analysis, cohort tracking, and real-time event streaming.</p>
+            <div class="card-extra">
+              <div class="card-extra-stat">
+                <span class="es-num">1.2M</span>
+                <span class="es-label">Events/day</span>
+              </div>
+              <div class="card-extra-divider"></div>
+              <div class="card-extra-stat">
+                <span class="es-num">48h</span>
+                <span class="es-label">Retention</span>
+              </div>
+              <div class="card-extra-divider"></div>
+              <div class="card-extra-stat">
+                <span class="es-num">Live</span>
+                <span class="es-label">Real-time</span>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Finance</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 8. Internal Docs ───────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://docs.internal.company.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Internal Docs"
+          data-category="Docs"
+          data-desc="Dokumentasi Internal"
+          role="listitem"
+          aria-label="Internal Docs – Dokumentasi Internal. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="file-text"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Internal Docs</p>
+            <p class="card-desc">Company knowledge base and internal documentation portal.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Docs</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 9. Linear ─────────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://linear.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Linear"
+          data-category="Dev Tools"
+          data-desc="Issue Tracking"
+          role="listitem"
+          aria-label="Linear – Issue Tracking. Status: New"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="check-square"></i>
+            </div>
+            <span class="status-badge new" aria-label="Status: New">
+              <span class="badge-dot"></span>New
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Linear</p>
+            <p class="card-desc">Streamlined issue tracking built for modern software teams at speed.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Dev Tools</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 10. Confluence ────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://confluence.atlassian.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Confluence"
+          data-category="Docs"
+          data-desc="Wiki & Documentation"
+          role="listitem"
+          aria-label="Confluence – Wiki & Documentation. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="book-marked"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Confluence</p>
+            <p class="card-desc">Team wiki and documentation hub by Atlassian for capturing and sharing knowledge.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Docs</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 11. Jira ──────────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://jira.atlassian.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Jira"
+          data-category="Dev Tools"
+          data-desc="Project Tracking"
+          role="listitem"
+          aria-label="Jira – Project Tracking. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="layers"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Jira</p>
+            <p class="card-desc">Agile project management and bug tracking tool for software development teams.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Dev Tools</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- ─── 12. Adobe XD ──────────────────── -->
+        <a
+          class="portal-card card-normal"
+          href="https://xd.adobe.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-name="Adobe XD"
+          data-category="Design"
+          data-desc="UI/UX Design Tool"
+          role="listitem"
+          aria-label="Adobe XD – UI/UX Design Tool. Status: Online"
+        >
+          <div class="card-noise" aria-hidden="true"></div>
+          <div class="card-glow"  aria-hidden="true"></div>
+          <div class="card-top">
+            <div class="card-icon-wrap" aria-hidden="true">
+              <i data-lucide="layout"></i>
+            </div>
+            <span class="status-badge online" aria-label="Status: Online">
+              <span class="badge-dot"></span>Online
+            </span>
+          </div>
+          <div class="card-body">
+            <p class="card-name">Adobe XD</p>
+            <p class="card-desc">Vector-based UX/UI design and prototyping tool for web and mobile experiences.</p>
+          </div>
+          <div class="card-footer">
+            <span class="category-tag">Design</span>
+            <div class="card-arrow" aria-hidden="true">
+              <i data-lucide="arrow-up-right"></i>
+            </div>
+          </div>
+        </a>
+
+        <!-- Empty state (hidden by default) -->
+        <div class="empty-state" id="emptyState" aria-live="assertive" aria-atomic="true">
+          <div class="empty-icon" aria-hidden="true">
+            <i data-lucide="search-x" style="width:28px;height:28px;"></i>
+          </div>
+          <p class="empty-title">No results found</p>
+          <p class="empty-sub">Try a different search term or browse all categories.</p>
+          <button class="btn-reset" id="btnReset">View All Platforms</button>
+        </div>
+
+      </div><!-- /bento-grid -->
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <p>
+      ⚡ Central Hub &nbsp;·&nbsp;
+      Built with pure HTML, CSS &amp; JS &nbsp;·&nbsp;
+      <a href="#" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Back to top</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
